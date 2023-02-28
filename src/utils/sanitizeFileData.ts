@@ -5,6 +5,10 @@ export async function sanitizeFileData(formattedData: string[][]) {
     for (const lines of formattedData) {
         // Running through each line, normalizing the content by removing blank spaces, lower-casing each letter and removing all accents
         const sanitizedLines = lines.map((value) => {
+            if (!isNaN(parseFloat(value)) && value.includes(",")) {
+                return parseFloat(value.replace(",", "."))
+            }
+
             const cleanValue = value
                 .trim()
                 .toLowerCase()
