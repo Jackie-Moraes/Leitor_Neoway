@@ -12,8 +12,6 @@ export async function checkCPFandCNPJ(sanitizedData: string[][]) {
         const cnpjFrequente = sanitizedData[i][6]
         const cnpjRecente = sanitizedData[i][7]
 
-        console.log(sanitizedData[i])
-
         // Validating if CPF/CNPJ is valid, and if not, removes the content from the array before resuming execution
         if (cpf !== null && !cpf.match(cpfRegex)) {
             sanitizedData.splice(i, 1)
