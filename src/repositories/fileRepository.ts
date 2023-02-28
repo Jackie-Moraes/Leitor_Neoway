@@ -13,5 +13,6 @@ export async function fillDatabase(completeData: string[][]) {
         await connection.query(query)
     } catch (e) {
         console.error(e)
+        throw { type: "databaseError", message: e.message }
     }
 }
