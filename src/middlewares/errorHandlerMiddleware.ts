@@ -6,6 +6,7 @@ export default async function handleErrors(
     res: Response,
     next: NextFunction
 ) {
+    // Validation Error, in case file is not present.
     if (error.type === "validationError") {
         return res.status(422).send(error.message)
     }

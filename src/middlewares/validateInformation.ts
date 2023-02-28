@@ -6,9 +6,11 @@ export async function validateFile(
     res: Response,
     next: NextFunction
 ) {
+    // Defaulting to root folder and searching for the desired file
     const __dirname = path.resolve()
     const filePath = `${__dirname}/scan/dados.txt`
 
+    // If the file is missing, throw error and stop execution
     if (!filePath) {
         throw {
             type: "validationError",
@@ -16,6 +18,7 @@ export async function validateFile(
         }
     }
 
+    // If the file is present, save it into locals and continue execution
     res.locals.file = filePath
     next()
 }
