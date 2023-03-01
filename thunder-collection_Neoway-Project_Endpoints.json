@@ -1,0 +1,23 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Neoway-Project",
+    "dateExported": "2023-03-01T18:18:42.385Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "5f458d1a-3089-4e7a-9a2e-2460c26678ba",
+            "colId": "31308d03-31da-4ab5-b925-b5ba1d686d84",
+            "containerId": "",
+            "name": "Send file to Database",
+            "url": "{{url}}/file",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-03-01T18:18:13.043Z",
+            "modified": "2023-03-01T18:18:23.915Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
