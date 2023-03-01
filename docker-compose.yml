@@ -1,0 +1,26 @@
+version: "3"
+services:
+    postgres-db:
+        image: postgres:alpine
+        container_name: postgres-db
+        restart: always
+        ports:
+            - "1122:5432"
+        env_file:
+            - ./.env
+        volumes:
+            - postgres-db-volume:/var/lib/postgresql/data
+            - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+    api:
+        container_name: api
+        build: .
+        ports:
+            - 3000:5000
+        depends_on:
+            - postgres-db
+        env_file:
+            - .env
+
+volumes:
+    postgres-db-volume:

@@ -1,4 +1,4 @@
-CREATE TABLE "users" (
+CREATE TABLE IF NOT EXISTS "users" (
     "id" SERIAL PRIMARY KEY,
     "cpf" CHAR(14) UNIQUE NOT NULL,
     "private" INTEGER NOT NULL,
