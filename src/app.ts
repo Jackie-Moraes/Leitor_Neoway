@@ -12,7 +12,7 @@ app.use(express.json())
 dotenv.config()
 
 // Routers
-app.use(fileRouter)
+app.use("/file", fileRouter)
 
 // Error Handler
 app.use(handleErrors)
