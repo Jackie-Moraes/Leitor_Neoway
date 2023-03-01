@@ -9,8 +9,8 @@ export async function checkCPFandCNPJ(sanitizedData: string[][]) {
     // Checking each array and validating CPF & CNPJ based on regex
     for (let i = 0; i < sanitizedData.length; i++) {
         const cpf = sanitizedData[i][0]
-        const cnpjFrequente = sanitizedData[i][6]
-        const cnpjRecente = sanitizedData[i][7]
+        const cnpjMostFrequent = sanitizedData[i][6]
+        const cnpjMostRecent = sanitizedData[i][7]
 
         // Validating if CPF/CNPJ is valid, and if not, removes the content from the array before resuming execution
         if (cpf !== null && !cpf.match(cpfRegex)) {
@@ -18,12 +18,12 @@ export async function checkCPFandCNPJ(sanitizedData: string[][]) {
             i--
         }
 
-        if (cnpjFrequente !== null && !cnpjFrequente.match(cnpjRegex)) {
+        if (cnpjMostFrequent !== null && !cnpjMostFrequent.match(cnpjRegex)) {
             sanitizedData.splice(i, 1)
             i--
         }
 
-        if (cnpjRecente !== null && !cnpjRecente.match(cnpjRegex)) {
+        if (cnpjMostRecent !== null && !cnpjMostRecent.match(cnpjRegex)) {
             sanitizedData.splice(i, 1)
             i--
         }
