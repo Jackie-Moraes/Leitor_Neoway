@@ -4,7 +4,7 @@ import cors from "cors"
 import dotenv from "dotenv"
 
 import fileRouter from "./routers/fileRouter.js"
-import handleErrors from "./middlewares/errorHandlerMiddleware.js"
+import errorHandler from "./middlewares/errorHandlerMiddleware.js"
 
 const app = express()
 app.use(cors())
@@ -15,6 +15,6 @@ dotenv.config()
 app.use("/file", fileRouter)
 
 // Error Handler
-app.use(handleErrors)
+app.use(errorHandler)
 
 export default app
